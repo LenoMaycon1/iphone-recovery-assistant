@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-graphite-950 text-graphite-100 font-sans antialiased;
+    background-image: radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(31, 111, 255, 0.08),
+      transparent
+    );
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-electric-600/40 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-electric-400/70 ring-offset-2 ring-offset-graphite-950;
+  }
+}
+
+@layer components {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.graphite.700') transparent;
+  }
+}
